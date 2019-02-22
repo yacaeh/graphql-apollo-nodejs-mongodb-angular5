@@ -15,7 +15,7 @@ exports.update = {
     }
   },
   resolve(root, params) {
-    return UserModel.findByIdAndUpdate(
+    return UserModel.findOneAndUpdate(
       params.id,
       { $set: { name: params.name } },
       { new: true }

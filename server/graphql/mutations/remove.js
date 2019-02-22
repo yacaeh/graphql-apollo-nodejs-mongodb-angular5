@@ -11,7 +11,7 @@ exports.remove = {
     }
   },
   resolve(root, params) {
-    const removeduser = UserModel.findByIdAndRemove(params.id).exec();
+    const removeduser = UserModel.findOneAndRemove(params.id).exec();
     if (!removeduser) {
       throw new Error('Error')
     }
